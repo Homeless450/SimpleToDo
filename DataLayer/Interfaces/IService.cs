@@ -2,7 +2,7 @@
 
 namespace DataLayer.Interfaces
 {
-    internal interface IService<T> where T : class
+    public interface IService<T> where T : class
     {
         IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter = null);
         T Get(Expression<Func<T, bool>> filter);
