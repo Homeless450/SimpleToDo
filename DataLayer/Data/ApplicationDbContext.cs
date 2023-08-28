@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Models;
+using Shared;
 
 namespace DataLayer.Data
 {
@@ -33,13 +34,12 @@ namespace DataLayer.Data
                 new Goal { Id = 5, Name = "go to bass", EndDay = DateTime.Now, Completed = true, StartDay = DateTime.Now.AddDays(-1), UserId = 2 },
                 new Goal { Id = 6, Name = "study .Net", EndDay = DateTime.Now, Completed = true, StartDay = DateTime.Now.AddDays(-1), UserId = 2 }
                 );
-            modelBuilder.Entity<Goal>().HasData(
-                new IdentityRole(SD.Role_Customer)).GetAwaiter().GetResult());
 
-            _roleManager.CreateAsync(new IdentityRole(SD.Role_Customer)).GetAwaiter().GetResult();
-            _roleManager.CreateAsync(new IdentityRole(SD.Role_Employee)).GetAwaiter().GetResult();
-            _roleManager.CreateAsync(new IdentityRole(SD.Role_Admin)).GetAwaiter().GetResult();
-            _roleManager.CreateAsync(new IdentityRole(SD.Role_Company)).GetAwaiter().GetResult();
+
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole { Name = SD.Role_User },
+                new IdentityRole { Name = SD.Role_Admin}
+                );
 
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shared
 {
-    internal class SD
+    public class SD
     {
         public const string Role_User = "User";
         public const string Role_Admin = "Admin";
