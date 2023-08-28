@@ -7,16 +7,16 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Models
 { 
-    public class User : IdentityUser<int>
+    public class User 
     {
         public User()
         {
             Goals = new List<Goal>();
         }
-
         public virtual ICollection<Goal> Goals { get; set; }
 
         [Required]
@@ -29,6 +29,7 @@ namespace Models
 
         public string Phone { get; set; }
 
-        public bool ActivityStatus { get; set; }
+        [NotMapped]
+        public string Role { get; set; }
     }
 }
