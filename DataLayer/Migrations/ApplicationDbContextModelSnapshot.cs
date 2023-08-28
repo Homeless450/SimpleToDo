@@ -47,6 +47,18 @@ namespace DataLayer.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "15c6d539-e1a8-4357-abd6-5b10e54862fa",
+                            Name = "User"
+                        },
+                        new
+                        {
+                            Id = "72b5e54d-5855-4e0f-8def-8eda38482d7e",
+                            Name = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -263,60 +275,60 @@ namespace DataLayer.Migrations
                         {
                             Id = 1,
                             Completed = false,
-                            EndDay = new DateTime(2023, 8, 30, 14, 58, 39, 817, DateTimeKind.Local).AddTicks(835),
+                            EndDay = new DateTime(2023, 8, 30, 15, 32, 47, 987, DateTimeKind.Local).AddTicks(2744),
                             Name = "eat burger in the morning",
                             Repeating = false,
-                            StartDay = new DateTime(2023, 8, 28, 14, 58, 39, 817, DateTimeKind.Local).AddTicks(857),
+                            StartDay = new DateTime(2023, 8, 28, 15, 32, 47, 987, DateTimeKind.Local).AddTicks(2763),
                             UserId = 1
                         },
                         new
                         {
                             Id = 2,
                             Completed = false,
-                            EndDay = new DateTime(2023, 8, 30, 14, 58, 39, 817, DateTimeKind.Local).AddTicks(859),
+                            EndDay = new DateTime(2023, 8, 30, 15, 32, 47, 987, DateTimeKind.Local).AddTicks(2767),
                             Name = "drink cola in the morning",
                             Repeating = false,
-                            StartDay = new DateTime(2023, 8, 28, 14, 58, 39, 817, DateTimeKind.Local).AddTicks(860),
+                            StartDay = new DateTime(2023, 8, 28, 15, 32, 47, 987, DateTimeKind.Local).AddTicks(2767),
                             UserId = 1
                         },
                         new
                         {
                             Id = 3,
                             Completed = false,
-                            EndDay = new DateTime(2023, 8, 31, 14, 58, 39, 817, DateTimeKind.Local).AddTicks(862),
+                            EndDay = new DateTime(2023, 8, 31, 15, 32, 47, 987, DateTimeKind.Local).AddTicks(2769),
                             Name = "go to gym",
                             Repeating = false,
-                            StartDay = new DateTime(2023, 8, 28, 14, 58, 39, 817, DateTimeKind.Local).AddTicks(862),
+                            StartDay = new DateTime(2023, 8, 28, 15, 32, 47, 987, DateTimeKind.Local).AddTicks(2769),
                             UserId = 2
                         },
                         new
                         {
                             Id = 4,
                             Completed = false,
-                            EndDay = new DateTime(2023, 9, 1, 14, 58, 39, 817, DateTimeKind.Local).AddTicks(863),
+                            EndDay = new DateTime(2023, 9, 1, 15, 32, 47, 987, DateTimeKind.Local).AddTicks(2771),
                             Name = "go to bass",
                             Repeating = false,
-                            StartDay = new DateTime(2023, 8, 28, 14, 58, 39, 817, DateTimeKind.Local).AddTicks(864),
+                            StartDay = new DateTime(2023, 8, 28, 15, 32, 47, 987, DateTimeKind.Local).AddTicks(2771),
                             UserId = 2
                         },
                         new
                         {
                             Id = 5,
                             Completed = true,
-                            EndDay = new DateTime(2023, 8, 28, 14, 58, 39, 817, DateTimeKind.Local).AddTicks(865),
+                            EndDay = new DateTime(2023, 8, 28, 15, 32, 47, 987, DateTimeKind.Local).AddTicks(2772),
                             Name = "go to bass",
                             Repeating = false,
-                            StartDay = new DateTime(2023, 8, 27, 14, 58, 39, 817, DateTimeKind.Local).AddTicks(866),
+                            StartDay = new DateTime(2023, 8, 27, 15, 32, 47, 987, DateTimeKind.Local).AddTicks(2773),
                             UserId = 2
                         },
                         new
                         {
                             Id = 6,
                             Completed = true,
-                            EndDay = new DateTime(2023, 8, 28, 14, 58, 39, 817, DateTimeKind.Local).AddTicks(867),
+                            EndDay = new DateTime(2023, 8, 28, 15, 32, 47, 987, DateTimeKind.Local).AddTicks(2801),
                             Name = "study .Net",
                             Repeating = false,
-                            StartDay = new DateTime(2023, 8, 27, 14, 58, 39, 817, DateTimeKind.Local).AddTicks(867),
+                            StartDay = new DateTime(2023, 8, 27, 15, 32, 47, 987, DateTimeKind.Local).AddTicks(2802),
                             UserId = 2
                         });
                 });
@@ -338,7 +350,6 @@ namespace DataLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Patronymic")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
