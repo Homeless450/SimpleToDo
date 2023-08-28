@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleToDo", "SimpleToDo\SimpleToDo.csproj", "{186612D3-51DD-4F95-88DE-BC7C051A40F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleToDo", "SimpleToDo\SimpleToDo.csproj", "{186612D3-51DD-4F95-88DE-BC7C051A40F3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{460CC743-8FEE-458A-B2BB-EF507B96BD85} = {460CC743-8FEE-458A-B2BB-EF507B96BD85}
+		{5FD60CB0-5048-440C-A9A4-E96B554699EC} = {5FD60CB0-5048-440C-A9A4-E96B554699EC}
+		{7B3BD42F-63A9-4B97-B17B-F2A8F845A5E5} = {7B3BD42F-63A9-4B97-B17B-F2A8F845A5E5}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{7B3BD42F-63A9-4B97-B17B-F2A8F845A5E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{7B3BD42F-63A9-4B97-B17B-F2A8F845A5E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{5FD60CB0-5048-440C-A9A4-E96B554699EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "DataLayer\DataLayer.csproj", "{5FD60CB0-5048-440C-A9A4-E96B554699EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{460CC743-8FEE-458A-B2BB-EF507B96BD85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{460CC743-8FEE-458A-B2BB-EF507B96BD85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
