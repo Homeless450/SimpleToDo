@@ -2,7 +2,7 @@
 
 namespace DataLayer.Interfaces
 {
-    internal interface IUserService : IService<User>
+    public interface IUserService : IService<User>
     {
         void Update(User obj);
 
