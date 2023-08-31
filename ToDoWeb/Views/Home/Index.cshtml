@@ -1,36 +1,5 @@
 ﻿@model IEnumerable<Goal>
 
-<div class="row justify-content-center">
-    <div class="col-xl-6 col-lg-8 col-md-8 col-sm-10">
-        <table class="table">
-            <thead>
-                <tr class="table-primary">
-                    <th scope="col">Id</th>
-                    <th scope="col">User</th>
-                    <th scope="col">Name</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var goal in Model)
-                {
-                    <tr>
-                        <th class="todos-column" scope="row">@goal.Id</th>
-                        <td class="todos-column">@goal.UserId</td>
-                        <td class="todos-column">@goal.Name</td>
-                        <td class="buttons-column">
-                            <input type="submit" class="btn btn-danger" value="Delete" onClick="deleteTodo(@goal.Id)" />
-                            <input type="submit" class="btn btn-primary" value="Update" onClick="populateForm(@goal.Id)" />
-                        </td>
-
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
 <div class="container">
     <div class="row pt-4 pb-3">
         <div class="col-6">
@@ -46,7 +15,8 @@
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
-            <th>Id</th>
+            <th>Status</th>
+            <th>User</th>
             <th>Goal</th>
             <th>End Date</th>
             <td></td>
@@ -56,16 +26,26 @@
         @foreach (var obj in Model)
         {
             <tr>
-                <td>@obj.Id</td>
+                <td>
+                    @if (@obj.Completed)
+                    {
+                        <i class="bi bi-check2-square"></i>
+                    }
+                    else
+                    {
+                        <i class="bi bi-x-square"></i>
+                    }
+                </td>
+                <td>@obj.UserId</td>
                 <td>@obj.Name</td>
                 <td>@obj.EndDay</td>
                 <td>
                     <div class="w-75 btn-group" role="group">
-                        <a asp-controller="Goal" asp-action="Edit" class="btn btn-primary mx-2">
+                        <a asp-controller="Goal" asp-action="Update" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
                             <i class="bi bi-pencil-square">Edit</i>
                         </a>
-                        <a asp-controller="Goal" asp-action="Delete" class="btn btn-danger mx-2">
-                            <i class="bi bi-trash-fill">Delete</i>
+                        <a asp-controller="Goal" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger mx-2">
+                            <i class="bi bi-trash-fill"></i>
                         </a>
                     </div>
                 </td>
